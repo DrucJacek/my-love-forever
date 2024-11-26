@@ -3,10 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja strona</title>
+    <title>My Love Forever</title>
+    <style>
+        /* Ustawienia ogólne */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffedf3; /* Jasny różowy */
+            color: #333;
+        }
+
+        /* Styl nagłówka */
+        header {
+            background-color: #ff99cc; /* Jasny różowy */
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #fff;
+        }
+
+        /* Styl przycisków */
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #ff66b2; /* Ciemniejszy różowy */
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            margin: 0 15px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff3385; /* Jeszcze ciemniejszy różowy */
+        }
+
+        /* Styl sekcji */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            height: 100vh;
+        }
+
+        /* Sekcja "Historia Miłości" */
+        #historiamilosci {
+            background-color: #ffb3d9; /* Bardzo jasny różowy */
+        }
+
+        /* Sekcja "Zdjęcia" */
+        #zdjecia {
+            background-color: #ff80b3; /* Średni różowy */
+        }
+
+        /* Sekcja "Powód Miłości" */
+        #powodmilosci {
+            background-color: #ff3399; /* Intensywny różowy */
+        }
+
+        /* Miejsce na zdjęcia */
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .photo-gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Witaj na mojej stronie!</h1>
-    <p>To jest przykładowa strona stworzona na GitHub Pages.</p>
+
+<header>
+    <h1>My Love Forever</h1>
+    <div class="buttons">
+        <button class="button" onclick="document.getElementById('historiamilosci').scrollIntoView({behavior: 'smooth'});">Historia Miłości</button>
+        <button class="button" onclick="document.getElementById('zdjecia').scrollIntoView({behavior: 'smooth'});">Zdjęcia</button>
+        <button class="button" onclick="document.getElementById('powodmilosci').scrollIntoView({behavior: 'smooth'});">Powód Miłości</button>
+    </div>
+</header>
+
+<section id="historiamilosci">
+    <h2>Historia Miłości</h2>
+    <p>Tu będzie opisana historia naszej miłości. To miejsce można wypełnić tekstem, który pokazuje, jak zaczęła się nasza wspólna podróż. Miłość to piękna historia!</p>
+</section>
+
+<section id="zdjecia">
+    <h2>Zdjęcia</h2>
+    <div class="photo-gallery">
+        <!-- Przykładowe zdjęcia - możesz dodać własne linki -->
+        <img src="https://via.placeholder.com/300x200/ff99cc/ffffff?text=Zdjęcie+1" alt="Zdjęcie 1">
+        <img src="https://via.placeholder.com/300x200/ff80b3/ffffff?text=Zdjęcie+2" alt="Zdjęcie 2">
+        <img src="https://via.placeholder.com/300x200/ff66b2/ffffff?text=Zdjęcie+3" alt="Zdjęcie 3">
+    </div>
+</section>
+
+<section id="powodmilosci">
+    <h2>Powód Miłości</h2>
+    <p>W tej sekcji opiszemy powód, dla którego się kochamy i co sprawia, że ta miłość jest wyjątkowa. To miejsce na osobiste wyznanie!</p>
+</section>
+
 </body>
 </html>
+
