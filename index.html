@@ -27,6 +27,25 @@
             color: #fff;
         }
 
+        header .left-img,
+        header .right-img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        header .left-img {
+            left: 20px; /* Odstęp od lewej krawędzi */
+        }
+
+        header .right-img {
+            right: 20px; /* Odstęp od prawej krawędzi */
+        }
+
         /* Styl przycisków */
         .buttons {
             margin-top: 20px;
@@ -125,6 +144,9 @@
     <!-- Cała zawartość strony -->
     <div id="content" class="blurred">
         <header>
+            <img src="https://via.placeholder.com/80/ff66b2/ffffff?text=Zdjęcie1" alt="Zdjęcie 1" class="left-img">
+            <img src="https://via.placeholder.com/80/ff66b2/ffffff?text=Zdjęcie2" alt="Zdjęcie 2" class="right-img">
+    
             <h1>My Love Forever</h1>
             <div class="buttons">
                 <button class="button" onclick="document.getElementById('historiamilosci').scrollIntoView({behavior: 'smooth'});">Historia Miłości</button>
