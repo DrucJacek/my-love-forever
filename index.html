@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Love Forever</title>
+    <script>
+        var password = "kochamcie1234"; 
+        var userPassword = prompt("Podaj hasło do strony:");
+
+        if (userPassword !== password) {
+            alert("Błędne hasło! Dostęp zabroniony.");
+            window.location.href = "https://www.google.com"; 
+        } else {
+            document.body.style.display = "block";
+        }
+    </script>
+
+
     <style>
         /* Ustawienia ogólne */
         body {
@@ -88,36 +101,36 @@
     </style>
 </head>
 <body>
+<div style="display:none;">
+    <header>
+        <h1>My Love Forever</h1>
+        <div class="buttons">
+            <button class="button" onclick="document.getElementById('historiamilosci').scrollIntoView({behavior: 'smooth'});">Historia Miłości</button>
+            <button class="button" onclick="document.getElementById('zdjecia').scrollIntoView({behavior: 'smooth'});">Zdjęcia</button>
+            <button class="button" onclick="document.getElementById('powodmilosci').scrollIntoView({behavior: 'smooth'});">Powód Miłości</button>
+        </div>
+    </header>
 
-<header>
-    <h1>My Love Forever</h1>
-    <div class="buttons">
-        <button class="button" onclick="document.getElementById('historiamilosci').scrollIntoView({behavior: 'smooth'});">Historia Miłości</button>
-        <button class="button" onclick="document.getElementById('zdjecia').scrollIntoView({behavior: 'smooth'});">Zdjęcia</button>
-        <button class="button" onclick="document.getElementById('powodmilosci').scrollIntoView({behavior: 'smooth'});">Powód Miłości</button>
-    </div>
-</header>
+    <section id="historiamilosci">
+        <h2>Historia Miłości</h2>
+        <p>Tu będzie opisana historia naszej miłości. To miejsce można wypełnić tekstem, który pokazuje, jak zaczęła się nasza wspólna podróż. Miłość to piękna historia!</p>
+    </section>
 
-<section id="historiamilosci">
-    <h2>Historia Miłości</h2>
-    <p>Tu będzie opisana historia naszej miłości. To miejsce można wypełnić tekstem, który pokazuje, jak zaczęła się nasza wspólna podróż. Miłość to piękna historia!</p>
-</section>
+    <section id="zdjecia">
+        <h2>Zdjęcia</h2>
+        <div class="photo-gallery">
+            <!-- Przykładowe zdjęcia - możesz dodać własne linki -->
+            <img src="https://via.placeholder.com/300x200/ff99cc/ffffff?text=Zdjęcie+1" alt="Zdjęcie 1">
+            <img src="https://via.placeholder.com/300x200/ff80b3/ffffff?text=Zdjęcie+2" alt="Zdjęcie 2">
+            <img src="https://via.placeholder.com/300x200/ff66b2/ffffff?text=Zdjęcie+3" alt="Zdjęcie 3">
+        </div>
+    </section>
 
-<section id="zdjecia">
-    <h2>Zdjęcia</h2>
-    <div class="photo-gallery">
-        <!-- Przykładowe zdjęcia - możesz dodać własne linki -->
-        <img src="https://via.placeholder.com/300x200/ff99cc/ffffff?text=Zdjęcie+1" alt="Zdjęcie 1">
-        <img src="https://via.placeholder.com/300x200/ff80b3/ffffff?text=Zdjęcie+2" alt="Zdjęcie 2">
-        <img src="https://via.placeholder.com/300x200/ff66b2/ffffff?text=Zdjęcie+3" alt="Zdjęcie 3">
-    </div>
-</section>
-
-<section id="powodmilosci">
-    <h2>Powód Miłości</h2>
-    <p>W tej sekcji opiszemy powód, dla którego się kochamy i co sprawia, że ta miłość jest wyjątkowa. To miejsce na osobiste wyznanie!</p>
-</section>
-
+    <section id="powodmilosci">
+        <h2>Powód Miłości</h2>
+        <p>W tej sekcji opiszemy powód, dla którego się kochamy i co sprawia, że ta miłość jest wyjątkowa. To miejsce na osobiste wyznanie!</p>
+    </section>
+</div>
 </body>
 </html>
 
