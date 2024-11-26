@@ -141,11 +141,17 @@
     </style>
 </head>
 <body>
+    <!-- Odtwarzacz audio (na początku ukryty) -->
+    <audio id="audioPlayer">
+        <source src="song.mp3" type="audio/mp3">
+        Twoja przeglądarka nie obsługuje tagu audio.
+    </audio>
+
     <!-- Cała zawartość strony -->
     <div id="content" class="blurred">
         <header>
-            <img src="https://via.placeholder.com/80/ff66b2/ffffff?text=Zdjęcie1" alt="Zdjęcie 1" class="left-img">
-            <img src="https://via.placeholder.com/80/ff66b2/ffffff?text=Zdjęcie2" alt="Zdjęcie 2" class="right-img">
+            <img src="./hello.png" alt="Zdjęcie 1" class="left-img">
+            <img src="./hello.png" alt="Zdjęcie 2" class="right-img">
     
             <h1>My Love Forever</h1>
             <div class="buttons">
@@ -195,6 +201,11 @@
                 // Usuń okienko hasła i efekt blur
                 document.getElementById('passwordModal').style.display = 'none';
                 document.getElementById('content').classList.remove('blurred');
+                
+                // Rozpocznij odtwarzanie muzyki
+                const audioPlayer = document.getElementById('audioPlayer');
+                audioPlayer.play(); // Rozpocznij odtwarzanie muzyki
+                audioPlayer.loop = true; // Ustaw powtarzanie muzyki
             } else {
                 // Błędne hasło
                 errorDiv.textContent = "Błędne hasło, spróbuj ponownie.";
