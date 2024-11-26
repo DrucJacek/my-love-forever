@@ -4,19 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Love Forever</title>
-    <script>
-        var password = "kochamcie1234"; 
-        var userPassword = prompt("Podaj hasło do strony:");
-
-        // Jeśli hasło jest niepoprawne, ponownie wyświetlamy formularz do wprowadzenia hasła.
-        if (userPassword !== password) {
-            alert("Błędne hasło! Dostęp zabroniony.");
-            window.location.href = "https://www.google.com"; // Przekierowanie do Google
-        } else {
-            document.getElementById('content').style.display = "block"; // Pokazujemy zawartość strony
-        }
-    </script>
-
     <style>
         /* Ustawienia ogólne */
         body {
@@ -61,7 +48,7 @@
             background-color: #ff3385; /* Jeszcze ciemniejszy różowy */
         }
 
-        /* Styl sekcji */
+        /* Sekcje */
         section {
             padding: 60px 20px;
             text-align: center;
@@ -83,26 +70,60 @@
             background-color: #ff3399; /* Intensywny różowy */
         }
 
-        /* Miejsce na zdjęcia */
-        .photo-gallery {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
+        /* Efekt blur */
+        .blurred {
+            filter: blur(8px);
+            pointer-events: none; /* Nie można kliknąć na zblurowaną część */
         }
 
-        .photo-gallery img {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
+        /* Styl okienka hasła */
+        .password-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 100;
+            width: 300px;
+        }
+
+        .password-modal input {
+            padding: 10px;
+            font-size: 1.2em;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .password-modal button {
+            background-color: #ff66b2;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .password-modal button:hover {
+            background-color: #ff3385;
+        }
+
+        .error {
+            color: red;
+            font-size: 1em;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Ukrycie zawartości strony do momentu poprawnego wprowadzenia hasła -->
-    <div id="content" style="display:none;">
+    <!-- Cała zawartość strony -->
+    <div id="content" class="blurred">
         <header>
             <h1>My Love Forever</h1>
             <div class="buttons">
@@ -132,5 +153,31 @@
             <p>W tej sekcji opiszemy powód, dla którego się kochamy i co sprawia, że ta miłość jest wyjątkowa. To miejsce na osobiste wyznanie!</p>
         </section>
     </div>
+
+    <!-- Okienko z hasłem -->
+    <div id="passwordModal" class="password-modal">
+        <h2>Podaj hasło</h2>
+        <input type="password" id="passwordInput" placeholder="Wpisz hasło" />
+        <button onclick="checkPassword()">Zaloguj się</button>
+        <div id="error" class="error"></div>
+    </div>
+
+    <script>
+        const correctPassword = "kochamcie1234"; // Poprawne hasło
+
+        function checkPassword() {
+            const userPassword = document.getElementById('passwordInput').value;
+            const errorDiv = document.getElementById('error');
+
+            if (userPassword === correctPassword) {
+                // Usuń okienko hasła i efekt blur
+                document.getElementById('passwordModal').style.display = 'none';
+                document.getElementById('content').classList.remove('blurred');
+            } else {
+                // Błędne hasło
+                errorDiv.textContent = "Błędne hasło, spróbuj ponownie.";
+            }
+        }
+    </script>
 </body>
 </html>
