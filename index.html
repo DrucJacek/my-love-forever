@@ -7,7 +7,7 @@
     <style>
         /* Ustawienia ogólne */
         body {
-            font-family: Arial, sans-serif;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #ffedf3; /* Jasny różowy */
@@ -17,8 +17,9 @@
         /* Styl nagłówka */
         header {
             background-color: #ff99cc; /* Jasny różowy */
-            padding: 50px 0;
+            padding: 50px 20px;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
@@ -49,6 +50,10 @@
         /* Styl przycisków */
         .buttons {
             margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
         .button {
@@ -56,7 +61,6 @@
             color: #fff;
             border: none;
             padding: 15px 30px;
-            margin: 0 15px;
             font-size: 1.2em;
             cursor: pointer;
             border-radius: 5px;
@@ -71,12 +75,14 @@
         section {
             padding: 60px 20px;
             text-align: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         /* Sekcja "Historia Miłości" */
         #historiamilosci {
             background-color: #ffb3d9; /* Bardzo jasny różowy */
+            font-size: 50px;
+            color: white;
         }
 
         /* Sekcja "Zdjęcia" */
@@ -84,9 +90,28 @@
             background-color: #ff80b3; /* Średni różowy */
         }
 
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            justify-items: center;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
         /* Sekcja "Powód Miłości" */
         #powodmilosci {
             background-color: #ff3399; /* Intensywny różowy */
+            font-size: 50px;
+            color: white;
+
         }
 
         /* Efekt blur */
@@ -138,6 +163,28 @@
             font-size: 1em;
             margin-top: 10px;
         }
+
+        /* Styl responsywny */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .button {
+                width: 100%;
+                padding: 10px;
+            }
+
+            header .left-img,
+            header .right-img {
+                display: none; /* Ukryj zdjęcia w nagłówku na małych ekranach */
+            }
+        }
     </style>
 </head>
 <body>
@@ -163,27 +210,68 @@
 
         <section id="historiamilosci">
             <h2>Historia Miłości</h2>
-            <p>Tu będzie opisana historia naszej miłości. To miejsce można wypełnić tekstem, który pokazuje, jak zaczęła się nasza wspólna podróż. Miłość to piękna historia!</p>
+            <p>
+                Hej mała! Cieszę się, że mogłaś zobaczyć tą stronę. <br>
+                Spodobał się kalendarz? Jeśli tak to super! Już dawno temu chciałem to zrobić!<br>
+                Tyle to już lat...aż 5! Jak to możliwe? Nie wiem. <br>Wiem napewno, że to nie będzie tylko 
+                5 lat a więcej i to naprawdę więcej.<br>
+                Wszystko się zaczęło od zjeżdżalni i się nie skończyło bo do dzisiaj myślę o tej chwili i jest cudowna.<br>
+                Mam nadzieje, że ta historia także dobiegnie do momentu gdzie wejdziemy do mieszkania i tam razem zamieszkamy. <br>
+                Pomyśl jak by było super gdybyśmy już mieli swój własny dom przy pięknej naturze, zapuścili korzenie i żyli długo 
+                i szczęśliwie. Kocham cię !
+
+            </p>
         </section>
 
         <section id="zdjecia">
             <h2>Zdjęcia</h2>
             <div class="photo-gallery">
-                <!-- Przykładowe zdjęcia - możesz dodać własne linki -->
-                <img src="https://via.placeholder.com/300x200/ff99cc/ffffff?text=Zdjęcie+1" alt="Zdjęcie 1">
-                <img src="https://via.placeholder.com/300x200/ff80b3/ffffff?text=Zdjęcie+2" alt="Zdjęcie 2">
-                <img src="https://via.placeholder.com/300x200/ff66b2/ffffff?text=Zdjęcie+3" alt="Zdjęcie 3">
+                <!-- Przykładowe zdjęcia - dodaj linki do własnych zdjęć -->
+                <img src="./IMG_0230.jpg" alt="Zdjęcie 1">
+                <img src="./IMG_0533.JPG" alt="Zdjęcie 2">
+                <img src="./IMG_0982.jpg" alt="Zdjęcie 3">
+                <img src="./IMG_1210.jpg" alt="Zdjęcie 4">
+                <img src="./IMG_2083.jpg" alt="Zdjęcie 5">
+                <img src="./IMG_2265.jpg" alt="Zdjęcie 6">
+                <img src="./IMG_3008.jpg" alt="Zdjęcie 7">
+                <img src="./IMG_3574.JPG" alt="Zdjęcie 8">
+                <img src="./IMG_3575.JPG" alt="Zdjęcie 9">
+                <img src="./IMG_3576.JPG" alt="Zdjęcie 10">
+                <img src="./IMG_3578.JPG" alt="Zdjęcie 11">
+                <img src="./IMG_3579.JPG" alt="Zdjęcie 12">
+                <img src="./IMG_3580.JPG" alt="Zdjęcie 13">
+                <img src="./IMG_3581.JPG" alt="Zdjęcie 14">
+                <img src="./IMG_3582.JPG" alt="Zdjęcie 15">
+                <img src="./IMG_3583.JPG" alt="Zdjęcie 16">
+                <img src="./IMG_3584.JPG" alt="Zdjęcie 17">
+                <img src="./IMG_3586.JPG" alt="Zdjęcie 18">
+                <img src="./IMG_3587.JPG" alt="Zdjęcie 19">
+                <img src="./IMG_3588.JPG" alt="Zdjęcie 20">
+                <img src="./IMG_3589.JPG" alt="Zdjęcie 21">
+                <img src="./IMG_3590.JPG" alt="Zdjęcie 22">
             </div>
         </section>
 
         <section id="powodmilosci">
             <h2>Powód Miłości</h2>
-            <p>W tej sekcji opiszemy powód, dla którego się kochamy i co sprawia, że ta miłość jest wyjątkowa. To miejsce na osobiste wyznanie!</p>
+            <p>
+                Powód miłości? <br>Myślę, że wymienienie tego mogło by zapchać nawet bazę danych Google czy Facebooka. <br>
+                Napewno powodem jesteś ty, bo to ty tą miłość dajesz mi.<br>
+                Dbasz o naszą relację i starasz się jak tylko możesz i ja to w tobie bardzo cenię. <br>
+                Chciałbym jeszcze tobie powiedzieć na koniec, że nieważne co by się stało między nami, tobą lub mną to zawszę będę cię kochać. <br>
+                Pamiętaj:
+                    <li>Kocham cię</li>
+                    <li>Jesteś silna!</li>
+                    <li>Jesteś mądra!</li>
+                    <li>Jesteś śliczna!</li>
+                    <li>Jesteś niezależna!</li>
+                    <li>Jesteś kochana!</li>
+
+            </p>
         </section>
     </div>
 
-    <!-- Okienko z hasłem -->
-    <div id="passwordModal" class="password-modal">
+     <div id="passwordModal" class="password-modal">
         <h2>Podaj hasło</h2>
         <input type="password" id="passwordInput" placeholder="Wpisz hasło" />
         <button onclick="checkPassword()">Zaloguj się</button>
@@ -191,7 +279,7 @@
     </div>
 
     <script>
-        const correctPassword = "kochamcie1234"; // Poprawne hasło
+        const correctPassword = "kochamcie!"; // Poprawne hasło
 
         function checkPassword() {
             const userPassword = document.getElementById('passwordInput').value;
@@ -208,7 +296,7 @@
                 audioPlayer.loop = true; // Ustaw powtarzanie muzyki
             } else {
                 // Błędne hasło
-                errorDiv.textContent = "Błędne hasło, spróbuj ponownie.";
+                errorDiv.textContent = "Złe hasło misia :(";
             }
         }
     </script>
